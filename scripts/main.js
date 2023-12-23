@@ -1,3 +1,9 @@
+
+
+
+
+
+
 document.addEventListener('DOMContentLoaded', function () {
     const buttons = document.querySelectorAll('.b button');
     const tabContents = document.querySelectorAll('.tab-content');
