@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>東京観光</title>
+  <link rel="stylesheet" type="text/css" href="beclay.css">
+  <!--<link rel="stylesheet" href="style1.css" media="screen and (max-width:480px)">-->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Bungee&family=Inter:wght@200;300&family=Kaisei+HarunoUmi&display=swap"
+    rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Bree+Serif" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+  <div id="targetElementnone">
+    <div class="a">お正月の東京観光</div>
+    <div class="stage">
+      <img src="img/nu01415.png" class="offsetElement">
+    </div>
+    <div class="b">
+      <button id="button1" class="a28">
+        <span>12.28</span>
+      </button>
+      <button id="button2" class="a29">
+        <span>12.29</span>
+      </button>
+      <button id="button3" class="a30">
+        <span>12.30</span>
+      </button>
+      <button id="button4" class="a31">
+        <span>12.31</span>
+      </button>
+    </div>
+    <div class="stage-a">
+      <img src="img/nu01415.png" class="offsetElement-a">
+    </div>
+    <div class="container">
+      <div class="countdown">
+        <h1 class="countdown-title">Countdown to
+          <span id="year" class="new-year"></span>
+        </h1>
+        <div class="time-container">
+          <p class="time"><span id="days" class="time-num"></span>days</p>
+          <p class="time"><span id="hours" class="time-num"></span>hours</p>
+          <p class="time"><span id="minutes" class="time-num"></span>minutes</p>
+          <p class="time"><span id="seconds" class="time-num"></span>seconds</p>
+        </div>
+      </div>
+    </div>
+    <div id="content1" class="dashed-note tab-content">
+      <!-- 12.28に対応するコンテンツ -->
+      <div class="postrera">
+        <p>2023.12.28</p>
+        <!-- 七色に変える -->
+        <p>19:00～ 正月スタート</p>
+        <p>20:00～ 映画</p>
+        <p>23:00～ 帰宅</p>
+        <p>04:00～ 就寝</p>
+        <div class="postmark"><span class="postmark-a">2023.12.28</span></div>
+      </div>
+    </div>
+    <div id="content2" class="dashed-note tab-content">
+      <!-- 12.29に対応するコンテンツ -->
+      <div>
+        <p>2023.12.29</p>
+        <p>10:00～ 起床</p>
+        <p>11:00～ スモールワールズ東京</p>
+        <a class="" href="https://ticket-guest.asoview.com/twist/select/158743VJ6081?content/">ticket</a>
+        <p>15:00～ 浅草観光</p>
+        <p>20:00～ 帰宅</p>
+        <p>04:00～ 就寝</p>
+      </div>
+    </div>
+    <div id="content3" class="dashed-note tab-content">
+      <!-- 12.30に対応するコンテンツ -->
+      <div>
+        <p>2023.12.30</p>
+        <p>07:00～ 起床</p>
+        <p>07:00～ 動画鑑賞</p>
+        <p>15:00～ 勉強</p>
+        <p>00:00～ 就寝</p>
+      </div>
+    </div>
+    <div id="content4" class="dashed-note tab-content">
+      <!-- 12.31に対応するコンテンツ -->
+      <div>
+        <p>2023.12.31</p>
+        <p>07:00～ 起床</p>
+        <p>08:30～ 池袋駅(特急ラビュー)</p>
+        <p>10:00～ 秩父駅 祭の湯</p>
+        <p>10:00～ </p>
+        <p>12:00～ 年越しそば（店舗名）</p>
+        <p>13:00～ </p>
+        <p>19:00～ ごはん（店舗名</p>
+        <p>20:00～ ホテル到着</p>
+        <a href="img/hotel.pdf" Download>ホテル予約確認</a>
+        <p>21:00～ 年に一度のテレビ</p>
+        <p>00:00～ ハッピーニューイヤー</p>
+      </div>
+    </div>
+    <a class="btn-emergency" onclick="showDiv()">
+      <span class="btn-emergency-bottom"></span>
+      <span class="btn-emergency-top"></span>
+    </a>
+  </div>
+  <div id="myDiv" class="hiddenbox">
+    <svg height="600" width="100%">
+      <symbol id="s-text">
+        <text x="0" y="120">
+          <tspan dy="0">HAPPY</tspan>
+          <tspan x="0" dy="1.2em">NEW</tspan>
+          <tspan x="0" dy="1.2em">YEAR</tspan>
+          <tspan x="0" dy="1.2em">2024</tspan>
+        </text>
+      </symbol>
+      <use xlink:href="#s-text" stroke="#F2385A" stroke-dasharray="70,10"> </use>
+      <use xlink:href="#s-text" stroke="#F5A503" stroke-dasharray="70,90"></use>
+      <use xlink:href="#s-text" stroke="#E9F1DF" stroke-dasharray="70,250"></use>
+      <use xlink:href="#s-text" stroke="#56D9CD" stroke-dasharray="70,570"></use>
+      <use xlink:href="#s-text" stroke="#3AA1BF" stroke-dasharray="70,570"></use>
+      <use xlink:href="#s-text" stroke="#03ff10" stroke-dasharray="50,50"> </use>
+      <use xlink:href="#s-text" stroke="#0353ff" stroke-dasharray="50,40"></use>
+      <use xlink:href="#s-text" stroke="#ff039e" stroke-dasharray="50,230"></use>
+      <use xlink:href="#s-text" stroke="#ff0335" stroke-dasharray="50,300"></use>
+      <use xlink:href="#s-text" stroke="#3AA1BF" stroke-dasharray="50,500"></use>
+    </svg>
+    <br>新年おめでとうございます。
+    <br>
+    <br>
+    <br>
+  </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.min.js"></script>
+  <script src="scripts/main.js"></script>
+</body>
+
+</html>

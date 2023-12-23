@@ -1,0 +1,562 @@
+@charset "UTF-8";
+
+/*---Reset---*/
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+address,
+ul,
+ol,
+li,
+dl,
+dt,
+dd,
+img,
+form,
+table,
+tr,
+th,
+td {
+	margin: 0;
+	padding: 0;
+	border: none;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 100%;
+	text-align: left;
+	list-style-type: none;
+	border-collapse: collapse;
+}
+
+textarea {
+	font-size: 100%;
+	vertical-align: middle;
+}
+
+img {
+	border-style: none;
+	display: block;
+}
+
+hr {
+	display: none;
+}
+
+em {
+	font-style: normal
+}
+
+input {
+	line-height: auto;
+	vertical-align: middle;
+}
+
+strong.more {
+	color: #c30
+}
+
+a {
+	text-decoration: none;
+}
+
+body {
+	font-family: 'Bungee', sans-serif;
+	font-family: 'Inter', sans-serif;
+	font-family: 'Kaisei HarunoUmi', serif;
+
+}
+
+/*クラス定義*/
+.clearfix:after {
+	content: ".";
+	display: block;
+	clear: both;
+	height: 0;
+	visibility: hidden;
+}
+
+.clearfix {
+	display: inline-table;
+}
+
+/* Hides from IE-mac \*/
+* html .clearfix {
+	height: 1%;
+}
+
+*+html .clearfix {
+	min-height: 1%;
+}
+
+.clearfix {
+	display: block;
+}
+
+/* End hide from IE-mac */
+
+* {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-o-box-sizing: border-box;
+	-ms-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+
+
+/*--- ページ基本デザイン ---*/
+
+.a {
+	font-size: 48px;
+	text-align: center;
+}
+
+.stage {
+	width: calc(100% - 35px);
+	height: 50px;
+	border-bottom: dotted 5px #182225;
+	margin-left: 35px;
+}
+
+.stage-a {
+	width: calc(100% - 35px);
+	height: 50px;
+	border-bottom: dotted 5px #182225;
+	margin-right: 35px;
+}
+
+.offsetElement {
+	width: 50px;
+	height: auto;
+	margin: 0 0 0 auto;
+	animation: move 5000ms forwards;
+}
+
+@keyframes move {
+	0% {
+		transform: translateX(0px);
+	}
+
+	100% {
+		transform: translateX(-300px);
+	}
+}
+
+.offsetElement-a {
+	width: 50px;
+	height: auto;
+	animation: shift 5000ms forwards;
+}
+
+@keyframes shift {
+	0% {
+		transform: translateX(0px);
+	}
+
+	100% {
+		transform: translateX(300px);
+	}
+}
+
+.b {
+	display: grid;
+	margin: 30px 30px 15px;
+	column-gap: 20px;
+	row-gap: 20px;
+	grid-template-columns: 1fr 1fr;
+}
+
+button {
+	position: relative;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border-radius: 5px;
+	background: #183153;
+	font-family: "Montserrat", sans-serif;
+	box-shadow: 0px 6px 24px 0px rgba(0, 0, 0, 0.2);
+	overflow: hidden;
+	border: none;
+}
+
+button:after {
+	content: " ";
+	width: 0%;
+	height: 100%;
+	background: #FFD401;
+	position: absolute;
+	transition: all 0.4s ease-in-out;
+	right: 0;
+}
+
+button:hover::after {
+	right: auto;
+	left: 0;
+	width: 100%;
+}
+
+button span {
+	text-align: center;
+	text-decoration: none;
+	width: 100%;
+	padding: 18px 25px;
+	color: #fff;
+	font-size: 18px;
+	font-weight: 700;
+	letter-spacing: 0.3em;
+	z-index: 20;
+	transition: all 0.3s ease-in-out;
+}
+
+button:hover span {
+	color: #183153;
+	animation: scaleUp 0.3s ease-in-out;
+}
+
+@keyframes scaleUp {
+	0% {
+		transform: scale(1);
+	}
+
+	50% {
+		transform: scale(0.95);
+	}
+
+	100% {
+		transform: scale(1);
+	}
+}
+
+/* タブメニュー */
+.tab-content {
+	display: none;
+}
+
+.active-tab {
+	display: block;
+}
+
+.dashed-note {
+	margin: 30px 30px 0;
+	padding: 0 15px;
+	background-color: #fff;
+	/* 背景色 */
+	background-image: linear-gradient(90deg, transparent 0%, transparent 50%, #fff 50%, #fff 100%),
+		/* 点線1の色 */
+		linear-gradient(180deg, #ccc 1px, transparent 1px);
+	/* 点線2の色と太さ */
+	background-size: 8px 100%,
+		/* 点線1のサイズ */
+		100% 2.5em;
+	/* 点線2のサイズ */
+	line-height: 2.5em;
+	/* 文字の高さ */
+	padding-bottom: 1px;
+	/* 最終行の下にも罫線を引く */
+}
+
+/* タブメニューここまで */
+/* スタンプ */
+.postrera {
+	position: relative;
+}
+
+.postmark {
+	position: absolute;
+	top: 50%;
+	left: 30%;
+	margin: 0;
+	padding: 10px;
+	width: 100px;
+	height: 100px;
+	border: 5px double #430;
+	-webkit-border-radius: 50%;
+	-moz-border-radius: 50%;
+	border-radius: 50%;
+	color: #430;
+	text-align: center;
+	font-size: 22px;
+	font-family: 'Bree Serif', serif;
+	line-height: 100px;
+	-webkit-transform: rotate(-16deg);
+	-ms-transform: rotate(-16deg);
+	transform: rotate(-16deg);
+}
+
+.postmark::before {
+	position: absolute;
+	top: 14%;
+	display: block;
+	padding: 0 0 8px;
+	width: 82%;
+	border-bottom: 1px solid #430;
+	content: 'Posted at :';
+	font-size: 16px;
+	line-height: 1;
+}
+
+.postmark::after {
+	position: absolute;
+	bottom: 16%;
+	display: block;
+	padding: 6px 0 0;
+	width: 82%;
+	border-top: 1px solid #430;
+	content: 'from TOKYO';
+	font-size: 13px;
+	line-height: 1;
+}
+
+.postmark-a {
+	position: absolute;
+	font-size: 16px;
+	top: -3%;
+	left: 10px;
+}
+
+/* スタンプここまで */
+
+
+.container {
+	position: relative;
+	padding-top: 30px;
+	background-image: url('bg.jpg');
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center center;
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+/* 背景画像と文字を区別させるためのオーバーレイ */
+.countainer::before {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0.3);
+}
+
+/* カウントダウンタイマー本体 */
+.countdown {
+	position: relative;
+	color: #183153;
+	text-align: center;
+}
+
+/* タイトル */
+.countdown-title {
+	font-family: 'Dancing Script', cursive;
+	line-height: 1.2;
+}
+
+/* 年のテキスト */
+.new-year {
+	display: block;
+	text-align: center;
+	font-weight: bold;
+	letter-spacing: 0.05em;
+}
+
+/* タイマー部分を囲うコンテナー */
+.time-container {
+	display: flex;
+	justify-content: center;
+	margin-top: 5px;
+}
+
+/* hours, minutes, secondsの共通スタイル */
+.time {
+	font-family: cursive;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	margin: 0 20px;
+}
+
+.countdown-title {
+	font-size: 35px;
+}
+
+.new-year {
+	font-size: 80px;
+}
+
+.time-wrap {
+	margin-top: 10px;
+}
+
+.time {
+	font-size: 18px;
+	margin: 0 10px;
+}
+
+.time-num {
+	font-size: 40px;
+}
+
+
+
+.btn,
+a.btn,
+button.btn {
+	font-size: 1.6rem;
+	font-weight: 700;
+	line-height: 1.5;
+	position: relative;
+	display: inline-block;
+	padding: 1rem 4rem;
+	cursor: pointer;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	-webkit-transition: all 0.3s;
+	transition: all 0.3s;
+	text-align: center;
+	vertical-align: middle;
+	text-decoration: none;
+	letter-spacing: 0.1em;
+	color: #212529;
+	border-radius: 0.5rem;
+}
+
+a.btn-emergency {
+	position: relative;
+	display: none;
+	width: 200px;
+	height: 130px;
+	margin: 0 auto;
+	margin-top: 20px;
+}
+
+a.btn-emergency:hover .btn-emergency-top {
+	top: 10px;
+	height: 50px;
+}
+
+a.btn-emergency:active .btn-emergency-top {
+	top: 20px;
+	height: 40px;
+}
+
+.btn-emergency-top {
+	position: absolute;
+	top: 0;
+	left: 20px;
+	width: 160px;
+	height: 60px;
+	margin-top: 30px;
+	-webkit-transition: all 0.3s;
+	transition: all 0.3s;
+	border-radius: 0 0 50% 50%;
+	background: #d62d2d;
+}
+
+.btn-emergency-top:before {
+	position: absolute;
+	top: -30px;
+	left: 0;
+
+	width: 160px;
+	height: 60px;
+
+	content: "";
+
+	border-radius: 80px / 30px;
+	background: #ed4c4c;
+}
+
+.btn-emergency-top span {
+	font-size: 38px;
+	font-weight: bold;
+
+	position: absolute;
+	top: -24px;
+	left: 0;
+
+	width: 100%;
+
+	-webkit-transform: scaleY(0.75);
+
+	transform: scaleY(0.75);
+	text-align: center;
+
+	color: #f6a3a3;
+}
+
+.btn-emergency-bottom {
+	position: absolute;
+	top: 38px;
+	left: 0;
+
+	width: 200px;
+	height: 80px;
+
+	border-radius: 100px / 40px;
+	background: #d8e4ea;
+	-webkit-box-shadow: 0 8px 0 #c4cacc;
+	box-shadow: 0 8px 0 #c4cacc;
+}
+
+
+/* クリック新年表示 */
+#myDiv {
+	display: none;
+}
+
+.hiddenbox {
+	color: #ffffff;
+	height: 100vh;
+	padding: 50px 20px;
+	text-align: center;
+	font-size: 20px;
+}
+
+
+use {
+	width: 100%;
+	text-transform: uppercase;
+	fill: none;
+	stroke-width: 2;
+	letter-spacing: 4px;
+	font: 125px Open Sans, Impact;
+	-webkit-animation: dash 10s linear infinite;
+	animation: dash 3s linear infinite;
+}
+
+@-webkit-keyframes dash {
+	from {
+		stroke-dashoffset: -100%;
+	}
+
+	to {
+		stroke-dashoffset: 0%;
+	}
+}
+
+@keyframes dash {
+	from {
+		stroke-dashoffset: -100%;
+	}
+
+	to {
+		stroke-dashoffset: 0%;
+	}
+}
+
+#targetElementnone {
+	height: 100%;
+	padding-bottom: 300px;
+	background: linear-gradient(to right, #ffffff 10%, #a1fff4 100%);
+}
